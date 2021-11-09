@@ -1,0 +1,15 @@
+<p>Choose the hero</p>
+<select name="heroes" [(ngModel)]='selectHero'>
+	<option disabled>Choose the hero</option>
+	<option *ngFor='let hero of heroes; let i = index;' 
+		[value]="hero.id">
+		{{hero.name}}
+	</option>
+</select>
+<select name="groups" [(ngModel)]='selectGroup'>
+	<option disabled>Choose the group</option>
+	<option [value]="group.id" *ngFor='let group of groups'>
+		{{group.name}}
+	</option>
+</select><br>
+<button (click)='addHeroGroup()'>Add hero</button>
