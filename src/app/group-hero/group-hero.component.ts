@@ -37,7 +37,9 @@ export class GroupHeroComponent implements OnInit {
     if(!arrayIdHeroes.indexOf(Number(this.selectHero))) console.log('hero is already here');
     else {
       arrayIdHeroes.push(Number(this.selectHero));
+      arrayIdHeroes = arrayIdHeroes.sort((a, b) => a - b)
       this.heroService.changeHeroList(this.selectGroup, arrayIdHeroes);
+      setTimeout(() => location.reload(), 500);
     }
 
   }
