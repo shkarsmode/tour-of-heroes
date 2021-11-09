@@ -10,6 +10,7 @@ import { MessageComponent } from './message/message.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { NewvariablesComponent } from './newvariables/newvariables.component';
 import { MypageComponent } from './mypage/mypage.component';
+import { GroupsComponent } from './groups/groups.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { MypageComponent } from './mypage/mypage.component';
     MessageComponent,
     DashboardComponent,
     NewvariablesComponent,
-    MypageComponent
+    MypageComponent,
+    GroupsComponent
   ],
   imports: [
     BrowserModule,
