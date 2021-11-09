@@ -28,7 +28,6 @@ export class HeroService {
   };
 
   getHeroes = (): any => {
-    // this.messageService.add('HeroService: fetched heroes');
     return this.http.get('https://6185696e23a2fe0017fff603.mockapi.io/api/heroes/heroes');
   }
 
@@ -49,9 +48,8 @@ export class HeroService {
     const url = `https://6185696e23a2fe0017fff603.mockapi.io/api/heroes/heroes/${id}`;
     return this.http.delete<any>(url) //, this.httpOptions
       .subscribe(el => console.log(el));
-    
-      
   }
+
 
   loginUser(name: string, password: string): any{
     this.http.get(`https://6185696e23a2fe0017fff603.mockapi.io/api/heroes/admin/1`)
