@@ -12,7 +12,7 @@ const routes: Routes = [
   { path: '', redirectTo: 'heroes', pathMatch: 'full' },
   { path: 'detail/:id', component: HeroDetailComponent },
   { path: 'newvariable', component: NewvariablesComponent },
-  { path: 'mypage', component: MypageComponent }
+  { path: 'mypage', component: MypageComponent },
 ];
 
 @NgModule({
