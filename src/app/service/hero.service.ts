@@ -66,7 +66,6 @@ export class HeroService {
     this.http.get(`https://6185696e23a2fe0017fff603.mockapi.io/api/heroes/admin/1`)
       .subscribe((el: any) => {
         if(el.name == name && el.password == password) {
-          console.log('Correct!')
           localStorage.setItem('name', name);
           localStorage.setItem('password', password);
           setTimeout(()=>location.reload(), 500);

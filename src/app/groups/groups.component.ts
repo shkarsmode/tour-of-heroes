@@ -23,7 +23,6 @@ export class GroupsComponent implements OnInit {
       .subscribe((el:any) => {
         this.groups = el;
         this.id_heroes2 = this.groups.map(el => el.id_heroes)
-        console.log(this.id_heroes2)
       });
     this.heroService.getHeroes()
       .subscribe((el:any) => this.heroes = el)

@@ -68,6 +68,7 @@ export class HeroesComponent implements OnInit {
   getData(): void {
     this.heroService.getSomeDate();
   }
+  
   getDataOut(): void{
    
   }
