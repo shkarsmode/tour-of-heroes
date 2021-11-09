@@ -5,6 +5,7 @@ import { HeroesComponent } from './heroes/heroes.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { NewvariablesComponent } from './newvariables/newvariables.component';
 import { MypageComponent } from './mypage/mypage.component';
+import { GroupsComponent } from './groups/groups.component';
 
 const routes: Routes = [
   { path: 'heroes', component: HeroesComponent },
@@ -12,7 +13,8 @@ const routes: Routes = [
   { path: '', redirectTo: 'heroes', pathMatch: 'full' },
   { path: 'detail/:id', component: HeroDetailComponent },
   { path: 'newvariable', component: NewvariablesComponent },
-  { path: 'mypage', component: MypageComponent }
+  { path: 'mypage', component: MypageComponent },
+  { path: 'groups', component: GroupsComponent },
 ];
 
 @NgModule({

@@ -1,1 +1,13 @@
-<p>groups works!</p>
+<h2>Groups</h2>
+<div>
+	<ul>
+		<li *ngFor='let group of groups; let i = index;' (click)='toggleShow(group.id)'>
+			<h4>{{group.name}}</h4>
+			<ol [class.hide]='!hide.includes(group.id)'>
+				<li *ngFor='let id_hero of id_heroes[i]'>
+					{{heroes[id_hero-1].name}}
+				</li>
+			</ol>
+		</li>
+	</ul>
+</div>

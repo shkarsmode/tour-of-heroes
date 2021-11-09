@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders} from '@angular/common/http';
 import { Injectable, OnInit } from '@angular/core';
+import { Group } from '../interfaces/group';
 import { Hero } from '../interfaces/hero';
 import { MessageService } from './message.service';
 
@@ -50,6 +51,10 @@ export class HeroService {
       .subscribe(el => console.log(el));
   }
 
+  getGroups() : any{
+    this.messageService.add(`HeroService: get groups`);
+    return this.http.get('https://6185696e23a2fe0017fff603.mockapi.io/api/heroes/groups');
+  }
 
   loginUser(name: string, password: string): any{
     this.http.get(`https://6185696e23a2fe0017fff603.mockapi.io/api/heroes/admin/1`)

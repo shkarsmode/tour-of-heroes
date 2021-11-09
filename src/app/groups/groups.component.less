@@ -1,0 +1,48 @@
+
+h4, h5{
+	margin: 0;
+}
+
+ul {
+	display: flex;
+	flex-direction: column;
+	list-style-type: none;
+	column-gap: 10px;
+	margin: 0;
+	width: 35%;
+	color: white;
+
+	& > li{
+		width: auto;
+		background-color: #3f525c;
+		border-radius: 2px;
+		padding: 1rem;
+		font-size: 1.2rem;
+		margin-bottom: 25px;
+		cursor: pointer;
+	}
+}
+
+ol{
+	overflow: hidden;
+	transition: all .5s;
+	opacity: 1;
+	list-style-type: none;
+	padding: 0;
+	max-height: 100px;
+
+
+
+	& > li {
+		transition: all .5s;
+
+	}
+
+}
+
+
+.hide{
+	max-height: 0px;
+	opacity: 0;
+
+}
