@@ -1,0 +1,13 @@
+<div> 
+    <h2>{{ hero.name | uppercase }} Details</h2>
+    <div><span>id: </span>{{hero.id}}</div>
+    <div>
+        <label for="name">Hero name: </label>
+        <input id="name" [(ngModel)]='hero.name' [readonly]='!isAdmin' placeholder="name">
+    </div>
+</div>
+
+<div class="flex">
+    <button (click)='goBack()'>Go back</button>
+    <button (click)='saveHero(hero)' [disabled]="!isAdmin" *ngIf='hero.name.length'><span *ngIf='!isLoading'>Save</span><img *ngIf='isLoading' src="https://i.stack.imgur.com/kOnzy.gif" alt=""></button>
+</div>

@@ -1,0 +1,28 @@
+<!-- <div *ngIf='!isLoaded'><h2 (click)='loadData()'>-> Load data <-</h2></div> -->
+
+<form [formGroup]="addNewForm">
+	<div> 
+		<h2>New variable</h2>
+		<div>
+			<label for='id'>id: </label>
+			<input type="number" formControlName='id' [ngModel]='heroesId' readonly id='id' placeholder="id">
+		</div>
+		<div>
+			<label for="name">Hero name: </label>
+			<input type="text" formControlName='name' placeholder="name">
+		</div>
+	</div>
+
+	<button (click)='addVar()' [disabled]="!addNewForm.valid">
+		<span *ngIf='isSend'>Add Variable</span>
+		<span *ngIf='!isSend'>
+			<img src="https://i.stack.imgur.com/kOnzy.gif" alt="sdf">
+		</span>
+	</button>
+</form>
+<div class='erorr' *ngIf="addNewForm.invalid && addNewForm.controls['name'].dirty">
+	<div *ngIf="addNewForm.controls['name'].errors?.['required'] || addNewForm.controls['name'].errors?.['minlength'] ; else elseBlock">
+		Min length!
+	</div>
+	<ng-template #elseBlock>This name is already there</ng-template>
+</div>

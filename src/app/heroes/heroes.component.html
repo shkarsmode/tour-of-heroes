@@ -1,0 +1,24 @@
+<!-- <div *ngIf='selectedHero'>Loading...</div> -->
+
+<div>
+    <h2 *ngIf='heroes.length'>My Heroes</h2>
+    <div *ngIf='!isLoaded'><h2>Loading...</h2></div>
+    <ul class='heroes' *ngIf='heroes.length'>
+        <li *ngFor='let hero of heroes'>
+            <a routerLink='/detail/{{hero.id}}'>
+                <span class="badge">{{hero.id}}</span> {{hero.name}}
+            </a>
+            <span *ngIf='isAdmin' class='x' (click)='deleteHero(hero)'><span *ngIf='!isLoading.includes(hero.id)'>X</span> 
+                <span *ngIf='isLoading.includes(hero.id)'><img src="https://i.stack.imgur.com/kOnzy.gif" alt=""></span>
+            </span>
+        </li>
+    </ul>
+    <h2 *ngIf='!heroes.length && isLoaded'>There are no heroes now</h2>
+</div>
+<!-- <button (click)='getData()'>Login</button>
+<button (click)='getDataOut()'>Logout</button>
+<div *ngIf='isAdmin'>You're admin</div> -->
+<!-- <button (click)='getData()'>GetData</button> -->
+
+
+<!-- <app-hero-detail *ngIf='selectedHero' [hero]='selectedHero'></app-hero-detail> -->

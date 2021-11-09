@@ -1,0 +1,6 @@
+<h2 *ngIf='heroes.length'>Top Heroes</h2>
+<div class='heroes-menu'>
+    <div *ngIf='!isLoaded'><h2>Loading...</h2></div>
+    <a *ngFor='let hero of heroes' routerLink='/detail/{{hero.id}}'>{{hero.name}}</a>
+    <h2 *ngIf='!heroes.length && isLoaded'>There are no heroes now</h2>
+</div>
