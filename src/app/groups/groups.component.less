@@ -4,13 +4,12 @@ h4, h5{
 }
 
 ul {
-	display: flex;
-	flex-direction: column;
 	list-style-type: none;
 	column-gap: 10px;
 	margin: 0;
-	width: 35%;
+	width: 345px;
 	color: white;
+
 
 	& > li{
 		width: auto;
@@ -25,17 +24,16 @@ ul {
 
 ol{
 	overflow: hidden;
-	transition: all .5s;
+	transition: all 1s;
 	opacity: 1;
 	list-style-type: none;
+	max-height: 600px;
+	height: max-content;
 	padding: 0;
-	max-height: 100px;
-
-
+	margin: 0;
 
 	& > li {
-		transition: all .5s;
-
+		// transition: all 1s;
 	}
 
 }

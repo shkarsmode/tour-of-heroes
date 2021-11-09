@@ -1,19 +1,19 @@
 <!-- <div *ngIf='selectedHero'>Loading...</div> -->
 
 <div>
-    <h2 *ngIf='heroes.length'>My Heroes</h2>
-    <div *ngIf='!isLoaded'><h2>Loading...</h2></div>
+    <!-- <h2 *ngIf='heroes.length'>My Heroes</h2> -->
+    <!-- <div *ngIf='!isLoaded'><h2>Loading...</h2></div> -->
     <ul class='heroes' *ngIf='heroes.length'>
-        <li *ngFor='let hero of heroes'>
-            <a routerLink='/detail/{{hero.id}}'>
-                <span class="badge">{{hero.id}}</span> {{hero.name}}
+        <li *ngFor='let heroId of id_heroes'>
+            <a routerLink='/detail/{{heroId}}'>
+                <span class="badge">{{heroId}}</span> {{heroes[heroId-1].name}}
             </a>
-            <span *ngIf='isAdmin' class='x' (click)='deleteHero(hero)'><span *ngIf='!isLoading.includes(hero.id)'>X</span> 
-                <span *ngIf='isLoading.includes(hero.id)'><img src="https://i.stack.imgur.com/kOnzy.gif" alt=""></span>
+            <span *ngIf='isAdmin' class='x' (click)='deleteHero(heroes[heroId-1])'><span *ngIf='!isLoading.includes(heroId)'>X</span> 
+                <span *ngIf='isLoading.includes(heroId)'><img src="https://i.stack.imgur.com/kOnzy.gif" alt=""></span>
             </span>
         </li>
     </ul>
-    <h2 *ngIf='!heroes.length && isLoaded'>There are no heroes now</h2>
+    <!-- <h2 *ngIf='!heroes.length && isLoaded'>There are no heroes now</h2> -->
 </div>
 <!-- <button (click)='getData()'>Login</button>
 <button (click)='getDataOut()'>Logout</button>

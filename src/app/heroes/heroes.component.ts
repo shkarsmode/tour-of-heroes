@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Hero } from '../interfaces/hero';
 import { HeroService } from '../service/hero.service';
 import { MessageService } from '../service/message.service';
@@ -11,6 +11,9 @@ import { Router } from '@angular/router';
 })
 export class HeroesComponent implements OnInit {
 
+  @Input()
+  id_heroes = [];
+  @Input()
   heroes: any[] = [];
   isLoaded: boolean = false;
   isLoading: number[] = [];
@@ -27,7 +30,7 @@ export class HeroesComponent implements OnInit {
   // }
 
   ngOnInit(): void {
-    this.getHeroes();
+    // this.getHeroes();
     this.isAdmin = this.heroService.isAdmin;
   }
 
@@ -48,7 +51,7 @@ export class HeroesComponent implements OnInit {
     setTimeout(()=> {
       this.isLoading = [];
       this.router.navigate(['/newvariable']);
-      setTimeout(()=> this.router.navigate(['/heroes']), 0)
+      setTimeout(()=> this.router.navigate(['/groups']), 0)
     }, 700);
   }
 

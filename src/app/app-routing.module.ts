@@ -10,7 +10,7 @@ import { GroupsComponent } from './groups/groups.component';
 const routes: Routes = [
   { path: 'heroes', component: HeroesComponent },
   { path: 'dashboard', component: DashboardComponent },
-  { path: '', redirectTo: 'heroes', pathMatch: 'full' },
+  { path: '', redirectTo: 'groups', pathMatch: 'full' },
   { path: 'detail/:id', component: HeroDetailComponent },
   { path: 'newvariable', component: NewvariablesComponent },
   { path: 'mypage', component: MypageComponent },

@@ -1,6 +1,6 @@
 <h1>{{title}}</h1>
 <nav>
-    <a routerLink="/heroes" routerLinkActive='active'>Heroes</a>
+    <a routerLink="/groups" routerLinkActive='active'>Groups</a>
     <a routerLink="/dashboard" routerLinkActive='active'>Dashboard</a>
     <a *ngIf='isAdmin' routerLink="/newvariable" routerLinkActive='active'>New variable</a>
     <a routerLink="/mypage" routerLinkActive='active'><span  *ngIf='!isAdmin'>Login</span><span *ngIf='isAdmin'>My page</span></a>
