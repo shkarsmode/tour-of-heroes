@@ -44,7 +44,6 @@ export class HeroService {
   }
 
   changeHeroList = (id: string, arr: number[]): any => {
-    let arr2 = [1, 3];
     return this.http.put<any>(`https://6185696e23a2fe0017fff603.mockapi.io/api/heroes/groups/${id}`,
       { id_heroes: arr  }).subscribe(el => console.log(el));
   }

@@ -11,6 +11,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { NewvariablesComponent } from './newvariables/newvariables.component';
 import { MypageComponent } from './mypage/mypage.component';
 import { GroupsComponent } from './groups/groups.component';
+import { GroupHeroComponent } from './group-hero/group-hero.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { GroupsComponent } from './groups/groups.component';
     DashboardComponent,
     NewvariablesComponent,
     MypageComponent,
-    GroupsComponent
+    GroupsComponent,
+    GroupHeroComponent
   ],
   imports: [
     BrowserModule,
