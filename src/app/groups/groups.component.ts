@@ -12,7 +12,7 @@ export class GroupsComponent implements OnInit {
 
   groups: Group[] = [];
   heroes: Hero[] = [];
-  id_heroes: any;
+  id_heroes2: any;
   hide: number[] = [];
   id: any = 0;
 
@@ -22,8 +22,8 @@ export class GroupsComponent implements OnInit {
     this.heroService.getGroups()
       .subscribe((el:any) => {
         this.groups = el;
-        this.id_heroes = this.groups.map(el => el.id_heroes)
-        console.log(this.id_heroes)
+        this.id_heroes2 = this.groups.map(el => el.id_heroes)
+        console.log(this.id_heroes2)
       });
     this.heroService.getHeroes()
       .subscribe((el:any) => this.heroes = el)
@@ -31,9 +31,7 @@ export class GroupsComponent implements OnInit {
 
   toggleShow(id: any){
     let ind = this.hide.indexOf(id);
-    console.log(ind)
     if(ind != -1) delete this.hide[ind];
     else this.hide.push(id)
   }
-
 }

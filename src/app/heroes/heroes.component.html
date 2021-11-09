@@ -5,10 +5,10 @@
     <!-- <div *ngIf='!isLoaded'><h2>Loading...</h2></div> -->
     <ul class='heroes' *ngIf='heroes.length'>
         <li *ngFor='let heroId of id_heroes'>
-            <a routerLink='/detail/{{heroId}}'>
-                <span class="badge">{{heroId}}</span> {{heroes[heroId-1].name}}
+            <a routerLink='/detail/{{heroes[heroId-1].id}}'>
+                <span class="badge">{{heroes[heroId-1].id}}</span> {{heroes[heroId-1].name}}
             </a>
-            <span *ngIf='isAdmin' class='x' (click)='deleteHero(heroes[heroId-1])'><span *ngIf='!isLoading.includes(heroId)'>X</span> 
+            <span *ngIf='isAdmin' class='x' (click)='deleteHeroList(heroes[heroId-1])'><span *ngIf='!isLoading.includes(heroId)'>X</span> 
                 <span *ngIf='isLoading.includes(heroId)'><img src="https://i.stack.imgur.com/kOnzy.gif" alt=""></span>
             </span>
         </li>

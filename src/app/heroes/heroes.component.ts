@@ -3,6 +3,7 @@ import { Hero } from '../interfaces/hero';
 import { HeroService } from '../service/hero.service';
 import { MessageService } from '../service/message.service';
 import { Router } from '@angular/router';
+import { toArray } from 'rxjs';
 
 @Component({
   selector: 'app-heroes',
@@ -11,13 +12,14 @@ import { Router } from '@angular/router';
 })
 export class HeroesComponent implements OnInit {
 
-  @Input()
-  id_heroes = [];
-  @Input()
-  heroes: any[] = [];
+  @Input() id_heroes: any;
+  @Input() heroes: any[] = [];
+  @Input() groupId: number = 0;
+
   isLoaded: boolean = false;
   isLoading: number[] = [];
   isAdmin: boolean = false;
+
   // selectedHero? : Hero;
 
   constructor(private heroService: HeroService, 
@@ -43,16 +45,24 @@ export class HeroesComponent implements OnInit {
         HeroService.heroesId = heroes.map((e:any) => e.id)
     });
   }
-
   deleteHero(hero: Hero){
-    let id = hero.id ? hero.id : 0;
-    this.isLoading.push(id);
-    this.heroService.deleteHero(hero);
-    setTimeout(()=> {
-      this.isLoading = [];
-      this.router.navigate(['/newvariable']);
-      setTimeout(()=> this.router.navigate(['/groups']), 0)
-    }, 700);
+    // let id = hero.id ? hero.id : 0;
+    // this.isLoading.push(id);
+    // this.heroService.deleteHero(hero);
+    // setTimeout(()=> {
+    //   this.isLoading = [];
+    //   this.router.navigate(['/newvariable']);
+    //   setTimeout(()=> this.router.navigate(['/groups']), 0)
+    // }, 700);
+  }
+  
+  deleteHeroList(hero: Hero){
+    let result: number[] = [];
+    this.id_heroes.forEach((el: number) => {
+        if(el != hero.id) result.push(el)
+    });
+    this.heroService.changeHeroList(String(this.groupId), result);
+    setTimeout(()=>location.reload(), 500);
   }
 
   getData(): void {
