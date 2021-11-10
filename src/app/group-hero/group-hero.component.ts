@@ -28,20 +28,42 @@ export class GroupHeroComponent implements OnInit {
       });
   }
 
-  addHeroGroup(){
-    // let length = Object.entries(this.groups![this.selectGroup-1].id_heroes).length;
+  getHeroesGroupId(selectGroup: number) : Array<number>{
     let arrayIdHeroes: Array<number> = [];
-    Object.entries(this.groups![this.selectGroup-1].id_heroes).forEach(el => {
+    Object.entries(this.groups![selectGroup-1].id_heroes).forEach(el => {
       arrayIdHeroes.push(el[1]);
-    })
-    if(!arrayIdHeroes.indexOf(Number(this.selectHero))) console.log('hero is already here');
-    else {
+    });
+    return arrayIdHeroes;
+  }
+
+  addHeroGroup(){
+    let arrayIdHeroes: Array<number> = [];
+    arrayIdHeroes = this.getHeroesGroupId(this.selectGroup);
+
+    if(arrayIdHeroes.indexOf(Number(this.selectHero))!= -1) 
+      console.log('hero is already here');
+    
+    else{
+      let groupArrBefore: any = [];
+      let groupIdBefore: any;
+  
+      this.groups!.forEach(el => {
+        Object.entries(el.id_heroes).forEach((hr):any =>  {
+          if(hr[1] == Number(this.selectHero)){
+            groupIdBefore = el.id;
+            groupArrBefore = this.getHeroesGroupId(groupIdBefore)
+              .filter(e => e!= Number(this.selectHero));
+          }
+        });
+      });
+      
+      if(groupIdBefore)
+        this.heroService.changeHeroList(groupIdBefore, groupArrBefore);
+
       arrayIdHeroes.push(Number(this.selectHero));
       arrayIdHeroes = arrayIdHeroes.sort((a, b) => a - b)
       this.heroService.changeHeroList(this.selectGroup, arrayIdHeroes);
       setTimeout(() => location.reload(), 500);
-    }
-
+    }    
   }
-
 }

@@ -1,0 +1,35 @@
+select {
+	font-size: 1em;
+	padding: .5rem;
+	margin-right: 10px;
+	cursor: pointer;
+
+}
+
+option {
+	&:hover{
+		background-color: rgb(238, 238, 238);
+
+	}
+}
+
+button {
+	margin-top: 20px;
+	background-color: #eee;
+	padding: 1rem;
+	border-radius: 4px;
+	font-size: 1rem;
+	cursor: pointer;
+	outline: none;
+	border: none;
+
+	&:hover {
+			background-color: #cfd8dc;
+	}
+
+	&[disabled]{
+			background-color: #eee;
+			color: #ccc;
+			cursor: not-allowed;
+	}
+}

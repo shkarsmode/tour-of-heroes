@@ -61,6 +61,7 @@ export class HeroesComponent implements OnInit {
     this.id_heroes.forEach((el: number) => {
         if(el != hero.id) result.push(el)
     });
+    console.log(result)
     this.heroService.changeHeroList(String(this.groupId), result);
     setTimeout(()=>location.reload(), 500);
   }

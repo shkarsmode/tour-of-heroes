@@ -49,7 +49,7 @@ export class NewvariablesComponent implements OnInit {
     this.isSend = false;
     this.heroService.putHero(this.addNewForm.get('name')!.value, 
     this.addNewForm.get('id')!.value.toString());
-    setTimeout(()=> {this.isSend = true; this.location.back()}, 1500)
+    setTimeout(()=> {this.isSend = true; location.reload()}, 1500)
   }
 
   validateName(c: FormControl) {
