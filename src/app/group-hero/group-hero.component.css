@@ -4,7 +4,10 @@ select {
   margin-right: 10px;
   cursor: pointer;
 }
-option:hover {
+option {
+  background-color: rgba(51, 102, 153, 0.26);
+}
+option:active {
   background-color: #eeeeee;
 }
 button {
